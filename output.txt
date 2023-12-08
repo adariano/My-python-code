@@ -1,2 +1,13 @@
-2 3 4 5 Sum=14
-3 4 5 6 Sum=18
+  BOB
+TOMMY
+  JIM
+
+JOHN
+JAKE
+ALAN
+BLUE
+
+LONGEST
+      A
+ LONGER
+  SHORT

@@ -5,6 +5,7 @@ maius = ''
 minus = ''
 pont = ''
 bandasp = False
+bandnum = False
 
 for i in range(len(t)):
     #ASPAS para interromper
@@ -17,6 +18,14 @@ for i in range(len(t)):
             continue
     if bandasp == True:
         continue
+
+    #FLAG para NUMERO interromper
+    if bandnum == True:
+        if ord(t[i]) > 47 and ord(t[i]) < 58:
+            informal += f'{i} '
+            continue
+        else:
+            bandnum = False
 
     # letra MINUSCULA
     if ord(t[i]) >= 97 and ord(t[i]) <= 122:
@@ -46,16 +55,29 @@ for i in range(len(t)):
             espbranco += f'{i} '
     
     # NUMEROS
-    if ord(t[i]) in range(48,58):  
+    if ord(t[i]) in range(48,58):
         if ord(t[i-1]) in range(0,47) or ord(t[i-1]) in range(58,124): #elemento ANTERIOR NÃO é um número
-            if (ord(t[i-1]) != 32 and ord(t[i-1]) != 44 and ord(t[i-1]) != 46): #não é " " ou "," ou "." 
+            if (ord(t[i-1]) != 32 and ord(t[i-1]) != 44 and ord(t[i-1]) != 46): #elemento ANTERIOR não é " " ou "," ou "."
                 informal += f'{i} '
+                bandnum = True
                 continue
+
         if i != len(t)-1:
-            if (ord(t[i+1]) in range(0,47) or ord(t[i+1]) in range(58,124)): #elemento POSTERIOR NÃO é um número
-                if ord(t[i+1]) != 32 and ord(t[i+1]) != 44 and ord(t[i+1]) != 46: #não é " " ou "," ou "." 
+             if (ord(t[i+1]) in range(0,47) or ord(t[i+1]) in range(58,124)): #elemento POSTERIOR NÃO é um número
+                if ord(t[i+1]) != 32 and ord(t[i+1]) != 44 and ord(t[i+1]) != 46: #elemento POSTERIOR não é " " ou "," ou "." 
                     informal += f'{i} '
                     continue
+
+    # if ord(t[i]) in range(48,58):  
+    #     if ord(t[i-1]) in range(0,47) or ord(t[i-1]) in range(58,124): #elemento ANTERIOR NÃO é um número
+    #         if (ord(t[i-1]) != 32 and ord(t[i-1]) != 44 and ord(t[i-1]) != 46): #elemento ANTERIOR não é " " ou "," ou "." 
+    #             informal += f'{i} '
+    #             continue
+    #     if i != len(t)-1:
+    #         if (ord(t[i+1]) in range(0,47) or ord(t[i+1]) in range(58,124)): #elemento POSTERIOR NÃO é um número
+    #             if ord(t[i+1]) != 32 and ord(t[i+1]) != 44 and ord(t[i+1]) != 46: #elemento POSTERIOR não é " " ou "," ou "." 
+    #                 informal += f'{i} '
+    #                 continue
 
     #PONTUAÇÃO
     if (ord(t[i]) == 44 or ord(t[i]) == 46) and i != len(t)-1:
