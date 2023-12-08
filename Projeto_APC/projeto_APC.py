@@ -5,16 +5,28 @@ maius = ''
 minus = ''
 pont = ''
 bandasp = False
+bandaux = False
 bandnum = False
 
 for i in range(len(t)):
     #ASPAS para interromper
     if ord(t[i]) == 34:
-        if bandasp == False:
+        aux = i + 1
+        while aux < len(t) and bandaux == False:
+            if ord(t[aux]) == 34:
+                bandaux = True
+                break
+            aux+=1
+        if bandaux == False:
+            pont += f'{i} '
+            continue
+        
+        if bandasp == False and bandaux == True:
             bandasp = True
             continue
         elif bandasp == True:
             bandasp = False
+            bandaux = False
             continue
     if bandasp == True:
         continue
@@ -51,7 +63,8 @@ for i in range(len(t)):
 
     # ESPAÇO
     if ord(t[i]) == 32:
-        if ord(t[i-1]) == 32 or ord(t[i+1]) == 32:
+        # if ord(t[i-1]) == 32 or ord(t[i+1]) == 32:
+        if ord(t[i-1]) == 32:
             espbranco += f'{i} '
     
     # NUMEROS
