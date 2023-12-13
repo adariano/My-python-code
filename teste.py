@@ -1,6 +1,12 @@
-while True:
-    try:
-        x = input()
-        print(x)
-    except EOFError:
-        break
+10 5
+1 15 5 998 27
+1
+88
+15
+88
+99
+5
+100
+7
+27
+998
