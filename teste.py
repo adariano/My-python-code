@@ -1,12 +1,19 @@
-10 5
-1 15 5 998 27
-1
-88
-15
-88
-99
-5
-100
-7
-27
-998
+9
+Maria Jose
+branco P
+Mangojata Mancuda
+vermelho P
+Cezar Torres Mo
+branco P
+Baka Lhau
+vermelho P
+JuJu Mentina
+branco M
+Amaro Dinha
+vermelho P
+Adabi Finho
+branco G
+Severina Rigudinha
+branco G
+Carlos Chade Losna
+vermelho P
